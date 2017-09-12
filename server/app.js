@@ -17,7 +17,6 @@ app.locals.ENV_DEVELOPMENT = env == 'development';
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-// app.use(favicon(__dirname + '/public/img/favicon.ico'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(
@@ -28,7 +27,7 @@ app.use(
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-///OUR CODE
+///OUR CODE ---------------------------------------------------------
 
 const whitelabelDomains = {
     'garkin.im': true,
@@ -95,7 +94,7 @@ app.post('/postable', accessControlMiddleware, (req, res) => {
     res.status(200).json({ hello: 'world' });
 });
 
-///END OF OUR CODE
+///END OF OUR CODE ---------------------------------------------------------
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
